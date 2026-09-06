@@ -18,6 +18,7 @@ jobs:
           shopt -s dotglob
           cp -r /tmp/extracted/StorageCleaner/* .
           sed -i "/alias(libs.plugins.kotlin.android)/d" app/build.gradle.kts
+          sed -i "/^    kotlinOptions {$/,/^    }$/d" app/build.gradle.kts
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
